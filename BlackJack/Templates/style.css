@@ -1,6 +1,6 @@
 @media screen{
 	#table {
-		left: 0%;
+		left: %;
 		width: 80%;
 		position: absolute;
 		background-image:url(img/table.png);	
@@ -11,17 +11,21 @@
 		height:auto;
 		width:auto;
 		background-color:#000000;
+		margin-left:5%;
+		margin-right:5%;
 	}
 	#topScore{
 		border: solid 2px ;
 		border-color:#FFFFFF;
 		border-left:none;
-		width: 18%;
+		width: 9%;
 		position: absolute;
-		left: 80%;
+		left: 85%;
+		margin-left:10px;
 		color:#12AF07;
 		border-color:#FFFFFF;
 		min-height:772px;
+		
 	}
 	.bankHand{
 		position:relative;
@@ -29,4 +33,40 @@
 		width:60%;
 		height:190px;
 		top:150px;
+		background-color:white;
+	}
+	#playerHand{
+		position:relative;
+		left:40%;
+		width:60%;
+		height:190px;
+		top:350px;
+		background-color:white;
+	}
+	.bet{
+		position:relative;
+		left:40%;
+		width:20%;
+		background-color:white;
+		font-size:32px;
+	}
+	.balance{
+		position:relative;
+		top:350px;
+		text-align:center;
+		background-color:white;
+		width:20%;
+		font-size:32px;
+	}
+	.help{
+		position:relative;
+		bottom:0px;
+		height:300px;
+		text-align:center;
+	}
+	.score{
+		position:relative;
+		height:300px;
+		text-align:center;
+	}
 }
