@@ -1,13 +1,16 @@
-/*@media screen{
-	.mainImg {		
-		/*background-image:url(img/table.png);	
+@media screen{
+	#table {
+		left: 0%;
+		width: 80%;
+		position: absolute;
+		background-image:url(img/table.png);	
 		background-size:100%;
 		min-height:772px;
 	}
-	.row{
-		height:inherit;
-		width:inherit;
 	html {
+		height:auto;
+		width:auto;
+		background-color:#000000;
 	}
 	#topScore{
 		border: solid 2px ;
@@ -20,45 +23,4 @@
 		border-color:#FFFFFF;
 		min-height:772px;
 	}
-}
-*/
-
-html,body,.container
-{
-    height:100%;
-}
-.container
-{
-    display:table;
-    width: 100%;
-    margin-top: -50px;
-    padding-top: 50px;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-header
-{
-    background: green;
-    height: 50px;
-}
-
-.row
-{
-    height: 100%;
-    display: table-row;
-}
-.col-md-3.no-float, .col-md-9.no-float {
-    float: none; /* thanks baxabbit */
-}
-.col-md-3
-{
-    display: table-cell;
-    background: pink;
-    width: 25%;
-}
-.col-md-9
-{
-    display: table-cell;
-    background: yellow;
-    width: 75%;
 }
