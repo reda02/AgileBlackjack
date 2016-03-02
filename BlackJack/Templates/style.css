@@ -23,4 +23,10 @@
 		border-color:#FFFFFF;
 		min-height:772px;
 	}
+	.bankHand{
+		position:relative;
+		left:40%;
+		width:60%;
+		height:190px;
+		top:150px;
 }
