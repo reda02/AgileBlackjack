@@ -4,6 +4,7 @@
     include("rel/header.php");
 ?>
 <script src="controls/functions.js"></script>
+<script src="controls/score.js"></script>
     <div class="row">
         <div class="mainContent col-md-10">
             <div class="bankContent row">
@@ -28,7 +29,7 @@
                            <?php include("mise.php"); ?>
                         </div>
 						<div class="col-md-3"><a class="btn btn-danger ">Fin du tour</a></div>
-                        <div class="col-md-3"><a class="btn btn-danger " href="user_form.php">QUITTER LA TABLE</a></div>
+                        <div class="col-md-3"><a class="btn btn-danger " onclick="onGameFinished();">QUITTER LA TABLE</a></div>
                     </div>
                     <div class="row gameState">
                        <div class="col-md-4">
