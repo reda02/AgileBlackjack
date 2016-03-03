@@ -9,20 +9,16 @@
             <div class="bankContent row">
                 <div class="col-md-12">
                     <div id="bankCards">
-                        <h2><i class="fa fa-university fa-3x"></i><br />Banque</h2>
-                        <div class="card"> </div>
-                        <div class="card"></div>
+                        <h2><i class="fa fa-university fa-3x"></i><br />Banque</h2>                        
                     </div>
                     <hr class="border-dotted"/>
                     <div id="playerCards">
                         <h2><i class="fa fa-user fa-3x"></i><br /><?= $curr_player ?></h2>
-                        <div class="card"></div>
-                        <div class="card"></div>
                     </div>
                     <div class="row boardControls">
                         <div class="col-md-3">
                             <button class="btn btn-warning disabled"  >ABANDON</button>
-                            <button class="btn btn-primary" onclick="getCard();console.log(bankCard1);">CARTE SUPPLEMENTAIRE</button>
+                            <button class="btn btn-primary" onclick="getCard('playerCards');console.log(bankCard1);">CARTE SUPPLEMENTAIRE</button>
                         </div>
                         <div class="col-md-6">
                             <input id="inputBeginMise" data-slider-ticks="[0,100,200, 300]" data-slider-id='inputBeginMiseSlider' type="text" data-slider-min="0" data-slider-max="300" data-slider-step="10" data-slider-ticks-labels='["$0",  "$100","$200","$300"]' data-slider-value="0"/>

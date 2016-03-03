@@ -1,7 +1,9 @@
 // DOM PRET
 $(document).ready(function(){
 	initializeDecks();	
-	
+	getCard("playerCards");
+	getCard("bankCards");
+	getCard("playerCards");
 });
 
 var deck = new Array(260);
@@ -33,14 +35,14 @@ function rendererPlayerCards(){
 	
 }
 
-function getCard(){	
+function getCard( id ){	
 	var idx = Math.floor(Math.random()*deck.length);
 	bankCard1 =	deck[idx];
 	
 	if (idx > -1) {
     deck.splice(idx, 1);
 	}
-	var player = document.getElementById("playerCards");
+	var player = document.getElementById(id);
 	var iDiv = document.createElement('div');
 	iDiv.className = 'card';
 	var img = "../img/";
