@@ -27,12 +27,12 @@
                             <input id="inputBeginMise" data-slider-ticks="[0,100,200, 300]" data-slider-id='inputBeginMiseSlider' type="text" data-slider-min="0" data-slider-max="300" data-slider-step="10" data-slider-ticks-labels='["$0",  "$100","$200","$300"]' data-slider-value="0"/>
                             <button class="btn btn-info">MISER</button>
                         </div>
-                        <div class="col-md-3"><button class="btn btn-danger disabled">QUITTER LA TABLE</button></div>
+                        <div class="col-md-3"><a class="btn btn-danger " href="index.php">QUITTER LA TABLE</a></div>
                     </div>
                     <div class="row gameState">
                        <div class="col-md-4">
                             <h2> Mon argent disponible </h2>
-                            <h3><i class="fa fa-money fa-2x"></i> $5000</h3>
+                            <h3><i class="fa fa-money fa-2x"></i> $1000</h3>
                        </div>
                        <div class="col-md-4 myGame">
                             <h2> Mon jeu </h2>

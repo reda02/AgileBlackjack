@@ -1,3 +1,15 @@
+<?PHP
+try
+{
+	//A changer pr la soutenance
+	//$bdd = new PDO('mysql:host=localhost;dbname=blackjack;charset=utf8', 'Black', 'BlackJack');
+	$bdd = new PDO('mysql:host=localhost;dbname=blackjack;charset=utf8', 'root', '');
+}
+catch (Exception $e)
+{
+		die('Erreur : ' . $e->getMessage());
+}
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -13,6 +25,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/bootstrap-slider.min.js"></script>
+	
   </head>
   <body>
       
