@@ -38,7 +38,7 @@
                        <div class="col-md-4 myGame">
                             <h2> Mon jeu </h2>
                             <h3><i class="fa fa-money fa-2x"></i> $200</h3>
-                            <h3>Etat de la main <i class="fa fa-thumbs-up fa-2x"></i> - Valeur : 18</h3>
+                            <h3>Etat de la main <i class="fa fa-thumbs-up fa-2x"></i> - Valeur : 18 </h3>
                             <h3>Etat de la main <i class="fa fa-hand-paper-o fa-2x"></i> - Valeur : 10</h3>
                             <h3>Etat de la main <i class="fa fa-thumbs-down fa-2x"></i> - Valeur : 22</h3>
                        </div>
