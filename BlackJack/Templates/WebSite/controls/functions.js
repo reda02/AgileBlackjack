@@ -2,6 +2,7 @@
 $(document).ready(function(){
 	initializeDecks();
 	desactivateButtons("btn-abandon","btn-add-carte");
+	$('#btn-add-carte').click(addCard());
 });
 
 var deck = new Array(260);
@@ -34,6 +35,7 @@ function rendererPlayerCards(){
 }
 
 function getCard( id ){	
+
 	var idx = Math.floor(Math.random()*deck.length);
 	bankCard1 =	deck[idx];
 	
@@ -46,7 +48,7 @@ function getCard( id ){
 	var img = "assets/img/";
 	img += bankCard1 + ".png";
 	iDiv.style.backgroundImage = " url("+img+")";
-        //background-image: url("../img/cardSpades6.png");
+	
 	player.appendChild(iDiv);
 }
 
@@ -86,4 +88,10 @@ function activateButtons(){
 
 function setBet(){
 	$("#current-bet").text(bet.toString());
+}
+function addCard(){
+		console.log($('#btn-add-carte').hasClass("disabled"))
+		if(($('#btn-add-carte').hasClass("disabled"))) return;
+		else
+			getCard("playerCards")
 }

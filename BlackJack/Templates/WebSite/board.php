@@ -22,7 +22,7 @@
                     <div class="row boardControls">
                         <div class="col-md-3">
                             <button id="btn-abandon" class="btn btn-warning disabled"  >ABANDON</button>
-                            <button  id="btn-add-carte" class="btn btn-primary" onclick="getCard('playerCards');console.log(bankCard1);">CARTE SUPPLEMENTAIRE</button>
+                            <button  id="btn-add-carte" class="btn btn-primary" onclick="addCard();">CARTE SUPPLEMENTAIRE</button>
                         </div>
                         <div class="col-md-6">
                            <?php include("mise.php"); ?>

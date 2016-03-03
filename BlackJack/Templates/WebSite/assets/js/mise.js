@@ -5,9 +5,12 @@ var bet;
 $(document).ready(function(){
 	walletPlayer = parseInt($("#wallet").text());
 	walletBank = 0;
+	$('#btn_mise').click(mise);
 })
 
 function mise() {
+	if(($('#btn_mise').hasClass("disabled"))) return;
+	
 	bet = parseInt($('#inputBeginMise').val());
 	if ( (walletPlayer - bet) >= 0){
 		walletPlayer = walletPlayer - bet;
@@ -18,10 +21,8 @@ function mise() {
 		setBet();
 	}else{
 		alert('il n\'a plus d\'argents');
-		// il n\'a plus d'argents
-	}
-	
-	//debugger;
+		
+	}	
 }
 function distribuerCartes(){
 	getCard("playerCards");	
