@@ -13,12 +13,16 @@
                     </div>
                     <hr class="border-dotted"/>
                     <div id="playerCards">
-                        <h2><i class="fa fa-user fa-3x"></i><br /><?= $curr_player ?></h2>
+                        <h2>
+							<i class="fa fa-user fa-3x"></i>
+							<br /><?= $curr_player ?>
+						</h2>
+						
                     </div>
                     <div class="row boardControls">
                         <div class="col-md-3">
-                            <button class="btn btn-warning disabled"  >ABANDON</button>
-                            <button class="btn btn-primary" onclick="getCard('playerCards');console.log(bankCard1);">CARTE SUPPLEMENTAIRE</button>
+                            <button id="btn-abandon" class="btn btn-warning disabled"  >ABANDON</button>
+                            <button  id="btn-add-carte" class="btn btn-primary" onclick="getCard('playerCards');console.log(bankCard1);">CARTE SUPPLEMENTAIRE</button>
                         </div>
                         <div class="col-md-6">
                            <?php include("mise.php"); ?>
@@ -32,17 +36,17 @@
                        </div>
                        <div class="col-md-4 myGame">
                             <h2> Mon jeu </h2>
-                            <h3><i class="fa fa-money fa-2x"></i> $200</h3>
+                            <h3><i class="fa fa-money fa-2x"></i>$<label id="current-bet">0</label> </h3>
                             <h3>Etat de la main <i class="fa fa-thumbs-up fa-2x"></i> - Valeur : 18 </h3>
-                            <h3>Etat de la main <i class="fa fa-hand-paper-o fa-2x"></i> - Valeur : 10</h3>
-                            <h3>Etat de la main <i class="fa fa-thumbs-down fa-2x"></i> - Valeur : 22</h3>
+                            <!--<h3>Etat de la main <i class="fa fa-hand-paper-o fa-2x"></i> - Valeur : 10</h3>
+                            <h3>Etat de la main <i class="fa fa-thumbs-down fa-2x"></i> - Valeur : 22</h3>-->
                        </div>
                        <div class="col-md-4">
                            <h2> La Banque </h2>
                            <h3><i class="fa fa-money fa-2x"></i> ∞ </h3>
                             <h3>Etat de sa main <i class="fa fa-thumbs-up fa-2x"></i> - Valeur : 18</h3>
-                            <h3>Etat de sa main <i class="fa fa-hand-paper-o fa-2x"></i> - Valeur : 10</h3>
-                            <h3>Etat de sa main <i class="fa fa-thumbs-down fa-2x"></i> - Valeur : 22</h3>
+                            <!--<h3>Etat de sa main <i class="fa fa-hand-paper-o fa-2x"></i> - Valeur : 10</h3>
+                            <h3>Etat de sa main <i class="fa fa-thumbs-down fa-2x"></i> - Valeur : 22</h3>-->
                        </div>
                     </div>
                 </div>

@@ -1,9 +1,11 @@
 // DOM PRET
 $(document).ready(function(){
-	initializeDecks();	
-	getCard("playerCards");
-	getCard("bankCards");
-	getCard("playerCards");
+	initializeDecks();
+	desactivateButtons("btn-abandon","btn-add-carte");
+	
+	//getCard("playerCards");
+	//getCard("bankCards");
+	//getCard("playerCards");
 });
 
 var deck = new Array(260);
@@ -45,7 +47,7 @@ function getCard( id ){
 	var player = document.getElementById(id);
 	var iDiv = document.createElement('div');
 	iDiv.className = 'card';
-	var img = "../img/";
+	var img = "assets/img/";
 	img += bankCard1 + ".png";
 	iDiv.style.backgroundImage = " url("+img+")";
         //background-image: url("../img/cardSpades6.png");
@@ -67,4 +69,25 @@ function shuffle() {
     deck[currentIndex] = deck[randomIndex];
     deck[randomIndex] = temporaryValue;
   }
+}
+
+function desactivateButtons(){
+	
+	if(arguments.length > 0){
+		for (i = 0; i < arguments.length; i++) {
+			$(('#'+arguments[i])).addClass('disabled');
+		}
+	}
+}
+
+function activateButtons(){
+	if(arguments.length > 0){
+		for (i = 0; i < arguments.length; i++) {
+			$(('#'+arguments[i])).removeClass('disabled');
+		}
+	}
+}
+
+function setBet(){
+	$("#current-bet").text(bet.toString());
 }
