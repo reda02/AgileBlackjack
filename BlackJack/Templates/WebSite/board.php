@@ -3,6 +3,7 @@
     $curr_player = "Nom du Joueur"; 
     include("rel/header.php");
 ?>
+<script src="controls/functions.js"></script>
     <div class="row">
         <div class="mainContent col-md-10">
             <div class="bankContent row">
