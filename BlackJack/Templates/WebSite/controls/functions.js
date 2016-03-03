@@ -1,3 +1,4 @@
+
 // DOM PRET
 $(document).ready(function(){
 	initializeDecks();
@@ -5,11 +6,46 @@ $(document).ready(function(){
 	$('#btn-add-carte').click(addCard());
 });
 
+var cardsJoueur =[];
+var cardBanque = [];
+var cards; 
+
+
+var deck = new Array(260);
+var bankCard1=0;
+var totale=0 ;
+
 var deck = new Array(260);
 var bankCard1=0;
 
+// Une fonction qui à partir d'un tableau de cartes (La main du joueur), vous donne le résultat de l'addition
+// Params : Liste de cartes
+// Sortie : Résultat de la main
+function parseCard(__card ){
+	
+		var temp =__card.substring(__card.length-1,__card.length);
+		
+		if(temp == 0)
+		{
+			temp = 10;
+			
+		}
+		
+	if( ('Q'==temp )|| ('K'==temp) || ('J' ==temp) ){
+		temp= 10;
+		
+	}
+    if(totale < 11 && ('A' == temp) ){
+		
+		temp= 11;
+		
+	}
+	
+	 return parseInt(temp);
+}
+
 function initializeDecks(){
-	var cards = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
+	cards = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
 	var cardForms = ["cardHearts","cardDiamonds","cardSpades","cardClubs"];
 	
 	var cpt = 0;
@@ -34,22 +70,50 @@ function rendererPlayerCards(){
 	
 }
 
-function getCard( id ){	
+function CalculeTotalCard(){
+totale=0;
+	for(var z=0; z < cardsJoueur.length; z++)
+	{
+				
+				totale= totale + parseCard(cardsJoueur[z]) ;	
+			
+			      console.log("totale "+totale);
+
+	}	
+	
+	
+}
+
+
+
+
+function getCard(){	 
+
+
+
+
+
 
 	var idx = Math.floor(Math.random()*deck.length);
-	bankCard1 =	deck[idx];
+	bankCard1 =	deck[idx]; 
+
 	
+	cardsJoueur.push(bankCard1) ;
+
 	if (idx > -1) {
     deck.splice(idx, 1);
 	}
-	var player = document.getElementById(id);
+	var player = document.getElementById("playerCards");
 	var iDiv = document.createElement('div');
+     console.log("player"+ player)
+	  console.log("iDiv"+ iDiv)
 	iDiv.className = 'card';
 	var img = "assets/img/";
 	img += bankCard1 + ".png";
 	iDiv.style.backgroundImage = " url("+img+")";
-	
+ 
 	player.appendChild(iDiv);
+	CalculeTotalCard() ;
 }
 
 function shuffle() {
