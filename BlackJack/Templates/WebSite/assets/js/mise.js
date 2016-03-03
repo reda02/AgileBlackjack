@@ -25,12 +25,11 @@ function mise() {
 		
 	}	
 }
+
 function distribuerCartes(){
 	getCard("playerCards");	
 	getCard("bankCards");
 	getCard("playerCards");
-	
-
 }
 
 
