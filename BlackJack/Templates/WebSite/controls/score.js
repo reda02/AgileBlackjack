@@ -16,6 +16,7 @@ function onGameFinished() {
 		window.location.reload();
 	}
 	else {
+		window.location.href = 'exit.php';
 
 	}
 }
