@@ -10,7 +10,7 @@
                 <div class="col-md-12">
                     <div id="bankCards">
                         <h2><i class="fa fa-university fa-3x"></i><br />Banque</h2>
-                        <div class="card"></div>
+                        <div class="card"> </div>
                         <div class="card"></div>
                     </div>
                     <hr class="border-dotted"/>
@@ -21,15 +21,14 @@
                     </div>
                     <div class="row boardControls">
                         <div class="col-md-3">
-                            <button class="btn btn-warning disabled">ABANDON</button>
-                            <button class="btn btn-primary disabled">CARTE SUPPLEMENTAIRE</button>
+                            <button class="btn btn-warning disabled"  >ABANDON</button>
+                            <button class="btn btn-primary" onclick="getCard();console.log(bankCard1);">CARTE SUPPLEMENTAIRE</button>
                         </div>
                         <div class="col-md-6">
-                            <?php
-                                include("mise.php");
-                            ?>
+                            <input id="inputBeginMise" data-slider-ticks="[0,100,200, 300]" data-slider-id='inputBeginMiseSlider' type="text" data-slider-min="0" data-slider-max="300" data-slider-step="10" data-slider-ticks-labels='["$0",  "$100","$200","$300"]' data-slider-value="0"/>
+                            <button class="btn btn-info">MISER</button>
                         </div>
-                        <div class="col-md-3"><a class="btn btn-danger " href="index.php">QUITTER LA TABLE</a></div>
+                        <div class="col-md-3"><a class="btn btn-danger " href="user_form.php">QUITTER LA TABLE</a></div>
                     </div>
                     <div class="row gameState">
                        <div class="col-md-4">
