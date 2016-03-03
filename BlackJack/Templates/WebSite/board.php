@@ -1,31 +1,8 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-03 03:02:05
-         compiled from "/var/www/blackjack/WebSite/view/index.tpl" */ ?>
-<?php
-/*%%SmartyHeaderCode:87305342656d79b1d946837_23271593%%*/
-if(!defined('SMARTY_DIR')) exit('no direct access allowed');
-$_valid = $_smarty_tpl->decodeProperties(array (
-  'file_dependency' => 
-  array (
-    'f67f8213b3f104de03df44f0e5983a16864ee7aa' => 
-    array (
-      0 => '/var/www/blackjack/WebSite/view/index.tpl',
-      1 => 1456970509,
-      2 => 'file',
-    ),
-  ),
-  'nocache_hash' => '87305342656d79b1d946837_23271593',
-  'has_nocache_code' => false,
-  'version' => '3.1.27',
-  'unifunc' => 'content_56d79b1d98d561_25353483',
-),false);
-/*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56d79b1d98d561_25353483')) {
-function content_56d79b1d98d561_25353483 ($_smarty_tpl) {
-
-$_smarty_tpl->properties['nocache_hash'] = '87305342656d79b1d946837_23271593';
-echo $_smarty_tpl->getSubTemplate ("rel/header.php", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
+<?php 
+    $title = "BlackJack - Jeu";
+    $curr_player = "Nom du Joueur"; 
+    include("rel/header.php");
 ?>
-;
     <div class="row">
         <div class="mainContent col-md-10">
             <div class="bankContent row">
@@ -37,7 +14,7 @@ echo $_smarty_tpl->getSubTemplate ("rel/header.php", $_smarty_tpl->cache_id, $_s
                     </div>
                     <hr class="border-dotted"/>
                     <div id="playerCards">
-                        <h2><i class="fa fa-user fa-3x"></i><br /><?php echo '<?=';?> $curr_player <?php echo '?>';?></h2>
+                        <h2><i class="fa fa-user fa-3x"></i><br /><?= $curr_player ?></h2>
                         <div class="card"></div>
                         <div class="card"></div>
                     </div>
@@ -57,7 +34,7 @@ echo $_smarty_tpl->getSubTemplate ("rel/header.php", $_smarty_tpl->cache_id, $_s
                             <h2> Mon argent disponible </h2>
                             <h3><i class="fa fa-money fa-2x"></i> $5000</h3>
                        </div>
-                       <div class="col-md-4">
+                       <div class="col-md-4 myGame">
                             <h2> Mon jeu </h2>
                             <h3><i class="fa fa-money fa-2x"></i> $200</h3>
                             <h3>Etat de la main <i class="fa fa-thumbs-up fa-2x"></i> - Valeur : 18</h3>
@@ -96,9 +73,6 @@ Duis dignissim et erat ac rutrum. Sed id mollis nibh, convallis consequat leo. M
         </div>
     </div>
       
-<?php echo $_smarty_tpl->getSubTemplate ("rel/footer.php", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
-?>
-;
-<?php }
-}
+<?php
+    include("rel/footer.php");
 ?>

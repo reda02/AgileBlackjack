@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-03 02:55:05
+<?php /* Smarty version 3.1.27, created on 2016-03-03 03:02:05
          compiled from "/var/www/blackjack/WebSite/rel/header.php" */ ?>
 <?php
-/*%%SmartyHeaderCode:142706217656d799791e9a90_34636086%%*/
+/*%%SmartyHeaderCode:171430696256d79b1d996be7_87719524%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6a69814d81f38c0c31e249448c2087db3ee5bf7c' => 
     array (
       0 => '/var/www/blackjack/WebSite/rel/header.php',
-      1 => 1456968577,
+      1 => 1456970239,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '142706217656d799791e9a90_34636086',
+  'nocache_hash' => '171430696256d79b1d996be7_87719524',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56d79979205b95_22734631',
+  'unifunc' => 'content_56d79b1d9a2127_15953727',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56d79979205b95_22734631')) {
-function content_56d79979205b95_22734631 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56d79b1d9a2127_15953727')) {
+function content_56d79b1d9a2127_15953727 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '142706217656d799791e9a90_34636086';
+$_smarty_tpl->properties['nocache_hash'] = '171430696256d79b1d996be7_87719524';
 ?>
 <!DOCTYPE html>
 <html>
@@ -51,6 +51,7 @@ $_smarty_tpl->properties['nocache_hash'] = '142706217656d799791e9a90_34636086';
     
   </head>
   <body>
-      <?php }
+      
+<?php }
 }
 ?>
