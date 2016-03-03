@@ -53,4 +53,21 @@
     #inputBeginMiseSlider .slider-selection {
         background: #ccc;
     }
-    
+    .gameState{
+        background-color: black;
+    }
+    .gameState h3{
+        color: white;
+    }
+    .gameState i{
+        vertical-align: middle;
+    }
+    .gameState .fa-thumbs-up{
+        color: green;
+    }
+    .gameState .fa-thumbs-down{
+        color: red;
+    }
+    .gameState .fa-hand-paper-o{
+        color: orange;
+    }

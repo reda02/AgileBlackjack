@@ -29,9 +29,24 @@
                         </div>
                         <div class="col-md-3"><button class="btn btn-danger disabled">QUITTER LA TABLE</button></div>
                     </div>
+                    <div class="row gameState">
+                       <div class="col-md-6">
+                           <h2> Mon jeu </h2>
+                           <h3><i class="fa fa-money fa-2x"></i> $2000</h3>
+                            <h3>Etat de la main <i class="fa fa-thumbs-up fa-2x"></i> - Valeur : 18</h3>
+                            <h3>Etat de la main <i class="fa fa-hand-paper-o fa-2x"></i> - Valeur : 10</h3>
+                            <h3>Etat de la main <i class="fa fa-thumbs-down fa-2x"></i> - Valeur : 22</h3>
+                       </div>
+                       <div class="col-md-6">
+                           <h2> La Banque </h2>
+                           <h3><i class="fa fa-2x"></i> ∞ </h3>
+                            <h3>Etat de sa main <i class="fa fa-thumbs-up fa-2x"></i> - Valeur : 18</h3>
+                            <h3>Etat de sa main <i class="fa fa-hand-paper-o fa-2x"></i> - Valeur : 10</h3>
+                            <h3>Etat de sa main <i class="fa fa-thumbs-down fa-2x"></i> - Valeur : 22</h3>
+                       </div>
+                    </div>
                 </div>
             </div>
-            
         </div>
         <div class="helpContent col-md-2">
             <div class="centered">
