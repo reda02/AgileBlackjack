@@ -90,3 +90,6 @@
     .myGame {
         background-color: darkslategrey;
     }
+	.disabled{
+	cursor : default !important;
+	}

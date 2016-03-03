@@ -18,6 +18,7 @@ function mise() {
 		distribuerCartes();
 		activateButtons("btn-abandon","btn-add-carte");
 		desactivateButtons("btn_mise");
+		$('#inputBeginMise').slider('disable');
 		setBet();
 	}else{
 		alert('il n\'a plus d\'argents');
