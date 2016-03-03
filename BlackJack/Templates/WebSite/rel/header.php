@@ -3,7 +3,7 @@ try
 {
 	//A changer pr la soutenance
 	//$bdd = new PDO('mysql:host=localhost;dbname=blackjack;charset=utf8', 'Black', 'BlackJack');
-	$bdd = new PDO('mysql:host=localhost;dbname=blackjack;charset=utf8', 'root', '');
+	$bdd = new PDO('mysql:host=localhost;dbname=bj_db;charset=utf8', 'root', 'root');
 }
 catch (Exception $e)
 {
