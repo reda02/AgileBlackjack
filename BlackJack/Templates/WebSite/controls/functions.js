@@ -11,6 +11,7 @@ var cards;
 var deck = new Array(260);
 var bankCard1=0;
 var totale=0 ;
+var totaleBanque=0;
 
 var deck = new Array(260);
 var bankCard1=0;
@@ -67,6 +68,62 @@ function rendererPlayerCards(){
  
 }
 
+function CalculeTotalCardBankcards(){
+	
+	totaleBanque=0;
+    var card11 = false;
+
+ for(var z=0; z < cardBanque.length; z++)
+ {
+  
+  if(11 == parseCard(cardBanque[z]) && (11 == parseCard(cardBanque[z+1]))){
+   arreterleJeux(total);
+  }
+ } 
+  
+ for(var z=0; z < cardBanque.length; z++)
+ {
+  if(11 == parseCard(cardBanque[z]) ){
+   card11 =true;
+  }  
+ }
+ for(var z=0; z < cardBanque.length; z++)
+ {
+ 
+    totaleBanque= totaleBanque + parseCard(cardBanque[z]) ; 
+        
+ 
+ } 
+ if(totaleBanque > 21 && card11 == true){
+  totaleBanque=totaleBanque - 10;
+  console.log("info "+"-10");
+  
+ }
+     console.log("etat "+card11);
+     console.log("totaleBanque "+totaleBanque);
+
+    if( totaleBanque >= 21 ){
+		arreterJeux("tolat>21");
+     
+    }
+ 
+ 
+}
+function arreterJeux(message){
+	
+	if( "tolat>21" == message ){
+		alert("la partie est superieur a 21")
+	}
+	
+}
+	
+
+
+
+
+
+
+
 function CalculeTotalCard(){
 totale=0;
 
@@ -97,11 +154,11 @@ totale=0;
  } 
  if(totale > 21 && card11 == true){
   totale=totale - 10;
-  console.log("info "+"-10");
+ // console.log("info "+"-10");
   
  }
-     console.log("etat "+card11);
-     console.log("totale "+totale);
+  //   console.log("etat "+card11);
+  //   console.log("totale "+totale);
 
     if( totale >= 21 ){
 		arreterJeux("tolat>21");
@@ -123,7 +180,10 @@ function getCard( id ){
  bankCard1 = deck[idx];
  if( id == "playerCards" )
  cardsJoueur.push(bankCard1) ;
- 
+
+
+  if( id == "bankCards" )
+ cardBanque.push(bankCard1) ;
 
 
  if (idx > -1) {
@@ -142,6 +202,10 @@ function getCard( id ){
  
  if( id == "playerCards" )
   CalculeTotalCard() ;
+
+ if( id == "bankCards" )
+  CalculeTotalCardBankcards() ;
+
 }
 
 
