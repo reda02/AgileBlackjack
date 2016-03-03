@@ -3,6 +3,7 @@
     $curr_player = "Nom du Joueur"; 
     include("rel/header.php");
 ?>
+<script src="controls/functions.js"></script>
     <div class="row">
         <div class="mainContent col-md-10">
             <div class="bankContent row">
@@ -28,12 +29,12 @@
                                 include("mise.php");
                             ?>
                         </div>
-                        <div class="col-md-3"><button class="btn btn-danger disabled">QUITTER LA TABLE</button></div>
+                        <div class="col-md-3"><a class="btn btn-danger " href="index.php">QUITTER LA TABLE</a></div>
                     </div>
                     <div class="row gameState">
                        <div class="col-md-4">
                             <h2> Mon argent disponible </h2>
-                            <h3><i class="fa fa-money fa-2x"></i> $5000</h3>
+                            <h3><i class="fa fa-money fa-2x"></i> $1000</h3>
                        </div>
                        <div class="col-md-4 myGame">
                             <h2> Mon jeu </h2>
