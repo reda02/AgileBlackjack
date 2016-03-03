@@ -1,0 +1,48 @@
+/** GENERAL **/
+    .orange{
+        color: orangered;
+    }
+    .centered{
+        text-align:center;
+    }
+    .border-dotted{
+        border: 1px dotted black;
+    }
+    /** MAIN CONTENT **/
+    
+    .mainContent{
+        height:800px;
+        background-color: green;
+    }
+    .bankContent h2{
+        color: white;
+        text-align:center;
+    }
+    .helpContent{
+        background-color: #ccc;
+        height:800px;
+    }
+    .help-descriptor{
+        overflow-x: auto;
+        height: 687px;
+    }
+    .bankContent{
+        border: 1px dotted white;
+    }
+    #firstCardBank,#secondCardBank{
+        height: 120px;
+        width: 75px;
+        float:left;
+        text-align:center;
+        background-size: 75px 120px;
+        border:2px solid black;
+        border-radius: 3px;
+    }
+    #firstCardBank{
+         background-image: url("../img/cardSpades6.png");
+    }
+    #secondCardBank{
+         background-image: url("../img/cardHeartsQ.png");
+         margin-left:-20px;
+    }
+    
