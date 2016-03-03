@@ -9,4 +9,13 @@ function onGameFinished() {
 	var query = "writeScore.php?" + constructParamsList(data);
 	
 	getRequest(query);
+
+	var res = confirm("Voulez-vous refaire une partie ?");
+
+	if(res) {
+		window.location.reload();
+	}
+	else {
+
+	}
 }
