@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title><?= $title ?></title>
+    <title>BlackJack - Apprendre</title>
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/blackjack.css" rel="stylesheet" type="text/css">
     <link href="assets/css/bootstrap-slider.min.css" rel="stylesheet" type="text/css">
