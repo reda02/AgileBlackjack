@@ -1,4 +1,12 @@
 /** GENERAL **/
+    html {
+        height: 100%;
+    }
+    body {
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+    }
     .orange{
         color: orangered;
     }
@@ -78,4 +86,7 @@
     }
     .gameState .fa-hand-paper-o{
         color: orange;
+    }
+    .myGame {
+        background-color: darkslategrey;
     }
