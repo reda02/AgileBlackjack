@@ -2,10 +2,6 @@
 $(document).ready(function(){
 	initializeDecks();
 	desactivateButtons("btn-abandon","btn-add-carte");
-	
-	//getCard("playerCards");
-	//getCard("bankCards");
-	//getCard("playerCards");
 });
 
 var deck = new Array(260);

@@ -24,7 +24,8 @@ function mise() {
 	//debugger;
 }
 function distribuerCartes(){
-	getCard("playerCards");
+	getCard("playerCards");	
+	getCard("bankCards");
 	getCard("playerCards");
 	
 
