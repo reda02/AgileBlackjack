@@ -24,8 +24,9 @@
                             <button class="btn btn-primary disabled">CARTE SUPPLEMENTAIRE</button>
                         </div>
                         <div class="col-md-6">
-                            <input id="inputBeginMise" data-slider-ticks="[0,100,200, 300]" data-slider-id='inputBeginMiseSlider' type="text" data-slider-min="0" data-slider-max="300" data-slider-step="10" data-slider-ticks-labels='["$0",  "$100","$200","$300"]' data-slider-value="0"/>
-                            <button class="btn btn-info">MISER</button>
+                            <?php
+                                include("mise.php");
+                            ?>
                         </div>
                         <div class="col-md-3"><button class="btn btn-danger disabled">QUITTER LA TABLE</button></div>
                     </div>
