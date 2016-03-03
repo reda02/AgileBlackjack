@@ -21,15 +21,14 @@
                             <button class="btn btn-primary" onclick="getCard('playerCards');console.log(bankCard1);">CARTE SUPPLEMENTAIRE</button>
                         </div>
                         <div class="col-md-6">
-                            <input id="inputBeginMise" data-slider-ticks="[0,100,200, 300]" data-slider-id='inputBeginMiseSlider' type="text" data-slider-min="0" data-slider-max="300" data-slider-step="10" data-slider-ticks-labels='["$0",  "$100","$200","$300"]' data-slider-value="0"/>
-                            <button class="btn btn-info">MISER</button>
+                           <?php include("mise.php"); ?>
                         </div>
                         <div class="col-md-3"><a class="btn btn-danger " href="user_form.php">QUITTER LA TABLE</a></div>
                     </div>
                     <div class="row gameState">
                        <div class="col-md-4">
                             <h2> Mon argent disponible </h2>
-                            <h3><i class="fa fa-money fa-2x"></i> $1000</h3>
+                            <h3><i class="fa fa-money fa-2x"></i> $<label id="wallet">1000</label></h3>
                        </div>
                        <div class="col-md-4 myGame">
                             <h2> Mon jeu </h2>
