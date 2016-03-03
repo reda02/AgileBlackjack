@@ -52,8 +52,13 @@
                 </div>
             </div>
         </div>
-        <div class="helpContent col-md-2">
+        <div class="helpContent col-md-2">	
             <div class="centered">
+				TOP SCORE : <br><br>
+				<?php
+					include 'highScore.php';
+				?>	
+				 <br><br> <br><br>
                 <i class="fa fa-question-circle fa-3x orange"></i>
                 <hr class="border-dotted"/>
                 <h4> Règles du jeu </h4>
