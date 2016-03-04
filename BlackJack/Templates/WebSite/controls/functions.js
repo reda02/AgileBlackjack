@@ -126,7 +126,11 @@ function arreterJeux(who){
       message+=" "+totale+" , et la banque est "+totaleBanque+" , WIN !! ";
       etat = 1;
     }    
-	else message += " terminé vous avez 21";
+	else 
+	{
+		message += " terminé vous avez 21";
+		resetGame(0);
+	}
     break;
     case "player":
     if(totale > 21){
@@ -142,7 +146,11 @@ function arreterJeux(who){
       message+=" "+totale+" , et la banque est "+totaleBanque+" , WIN !! ";
       etat = 1;
     }
-	else message += " terminé vous avez 21";
+	else 
+	{
+		message += " terminé vous avez 21";
+		resetGame(2);
+	}
       break;
     default:
 	
@@ -220,6 +228,8 @@ function CalculeTotalCard(){
     arreterJeux("player");
     //arreterJeux("tolat=21","player");
   }
+  if( totale == 21 )
+	  hold();
   // MAJ du résultat Main Joueur
   $("#resultMainJoueur").text(totale);
  
