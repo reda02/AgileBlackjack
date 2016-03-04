@@ -191,8 +191,8 @@ function getCard( id ){
  }
  var player = document.getElementById(id);
  var iDiv = document.createElement('div');
-     console.log("player"+ player)
-   console.log("iDiv"+ iDiv)
+  //   console.log("player"+ player)
+  // console.log("iDiv"+ iDiv)
  iDiv.className = 'card';
  var img = "assets/img/";
  img += bankCard1 + ".png";
@@ -200,11 +200,17 @@ function getCard( id ){
         //background-image: url("../img/cardSpades6.png");
  player.appendChild(iDiv);
  
- if( id == "playerCards" )
+ if( id == "playerCards" ){
   CalculeTotalCard() ;
+  setScoreDiv("score-current-player",totale);
 
- if( id == "bankCards" )
+ }
+  
+
+ if( id == "bankCards" ){
   CalculeTotalCardBankcards() ;
+  setScoreDiv("score-current-bank",totaleBanque)
+ }
 
 }
 
@@ -299,4 +305,10 @@ function constructParamsList(data)
    for (var d in data)
       ret.push(encodeURIComponent(d) + "=" + encodeURIComponent(data[d]));
    return ret.join("&");
+}
+function setScoreDiv(idParag,score){
+  if(($('#'+idParag).hasClass("hidden-div"))) {
+      $('#'+idParag).removeClass("hidden-div");
+  }
+  $('#'+idParag).text(score);
 }

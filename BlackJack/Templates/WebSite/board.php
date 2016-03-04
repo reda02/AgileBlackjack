@@ -10,10 +10,17 @@
             <div class="bankContent row">
                 <div class="col-md-12">
                     <div id="bankCards">
-                        <h2><i class="fa fa-university fa-3x"></i><br />Banque</h2>                        
+
+                        <h2><i class="fa fa-university fa-3x"></i><br />Banque</h2> 
+                        <div>
+                            <p id="score-current-bank" class="hidden-div" >0</p>
+                        </div>                       
                     </div>
                     <hr class="border-dotted"/>
                     <div id="playerCards">
+                        <div>
+                            <p id="score-current-player" class="hidden-div" >0</p>
+                        </div>
                         <h2>
 							<i class="fa fa-user fa-3x"></i>
 							<br /><?= $curr_player ?>

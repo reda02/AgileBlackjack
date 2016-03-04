@@ -41,7 +41,7 @@
     }
     #bankCards, #playerCards{
         display: inline-block;
-        margin: 30px 0px;
+        margin: 0px;
     }
     .helpContent{
         background-color: #ccc;
@@ -93,3 +93,9 @@
 	.disabled{
 	cursor : default !important;
 	}
+    #score-current-player , #score-current-bank{
+        font-size: 50px;
+    }
+    .hidden-div{
+        visibility: hidden;
+    }
