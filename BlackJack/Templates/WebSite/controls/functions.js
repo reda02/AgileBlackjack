@@ -1,4 +1,4 @@
-// DOM PRET
+﻿// DOM PRET
 $(document).ready(function(){
  initializeDecks();
  desactivateButtons("btn-abandon","btn-add-carte");
@@ -186,8 +186,7 @@ function getCard( id ){
  }
  var player = document.getElementById(id);
  var iDiv = document.createElement('div');
-     //console.log("player"+ player)
-   //console.log("iDiv"+ iDiv)
+
  iDiv.className = 'card';
  var img = "assets/img/";
  img += bankCard1 + ".png";
@@ -195,11 +194,17 @@ function getCard( id ){
         //background-image: url("../img/cardSpades6.png");
  player.appendChild(iDiv);
  
- if( id == "playerCards" )
+ if( id == "playerCards" ){
   CalculeTotalCard() ;
+  setScoreDiv("score-current-player",totale);
 
- if( id == "bankCards" )
+ }
+  
+
+ if( id == "bankCards" ){
   CalculeTotalCardBankcards() ;
+  setScoreDiv("score-current-bank",totaleBanque)
+ }
 
 }
 
@@ -297,7 +302,6 @@ function constructParamsList(data)
    return ret.join("&");
 }
 
-
 // NON TERMINE !
 function resetGame(){
   $("#playerCards .card").remove();
@@ -346,4 +350,11 @@ function showNotification(_message, _type){
       style: 'happyblue'
     });
   }
+
+function setScoreDiv(idParag,score){
+  if(($('#'+idParag).hasClass("hidden-div"))) {
+      $('#'+idParag).removeClass("hidden-div");
+  }
+  $('#'+idParag).text(score);
+
 }
