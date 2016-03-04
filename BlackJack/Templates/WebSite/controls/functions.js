@@ -103,11 +103,11 @@ function CalculeTotalCardBankcards(){
      
     }*/
   // MAJ du résultat Main Joueur
-  $("#resultMainBanque").text(totale);
+  $("#resultMainBanque").text(totaleBanque);
  
 }
 function arreterJeux(who){
-	var message = " votre jeux est";
+	var message = " Votre jeu est";
   // 0 : lose ; 1 : dual ; 2 : win 
   var etat = 0;
   
