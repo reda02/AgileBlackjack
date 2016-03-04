@@ -5,7 +5,7 @@
             return value + "$";
         }
     });
-      
+    
   </script>
   </body>
 </html>

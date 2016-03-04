@@ -22,13 +22,13 @@
                     </div>
                     <div class="row boardControls">
                         <div class="col-md-3">
-                            <button id="btn-abandon" class="btn btn-warning disabled"  >ABANDON</button>
+                            <button id="btn-abandon" class="btn btn-warning disabled" onclick="resetGame();" >ABANDON</button>
                             <button  id="btn-add-carte" class="btn btn-primary" onclick="addCard();">CARTE SUPPLEMENTAIRE</button>
                         </div>
                         <div class="col-md-6">
                            <?php include("mise.php"); ?>
                         </div>
-						<div class="col-md-3"><a class="btn btn-danger ">Fin du tour</a></div>
+						<div class="col-md-3"><a class="btn btn-danger" onclick="addCartBank();">Fin du tour</a></div>
                         <div class="col-md-3"><a class="btn btn-danger " onclick="onGameFinished();">QUITTER LA TABLE</a></div>
                     </div>
                     <div class="row gameState">
@@ -38,15 +38,15 @@
                        </div>
                        <div class="col-md-4 myGame">
                             <h2> Mon jeu </h2>
-                            <h3><i class="fa fa-money fa-2x"></i>$<label id="current-bet">0</label> </h3>
-                            <h3>Etat de la main <i class="fa fa-thumbs-up fa-2x"></i> - Valeur : 18 </h3>
+                            <h3><i class="fa fa-money fa-2x"></i> $<label id="current-bet">0</label> </h3>
+                            <h3>Etat de la main : <label id="resultMainJoueur">NC</label></h3>
                             <!--<h3>Etat de la main <i class="fa fa-hand-paper-o fa-2x"></i> - Valeur : 10</h3>
                             <h3>Etat de la main <i class="fa fa-thumbs-down fa-2x"></i> - Valeur : 22</h3>-->
                        </div>
                        <div class="col-md-4">
                            <h2> La Banque </h2>
                            <h3><i class="fa fa-money fa-2x"></i> ∞ </h3>
-                            <h3>Etat de sa main <i class="fa fa-thumbs-up fa-2x"></i> - Valeur : 18</h3>
+                            <h3>Etat de sa main : <label id="resultMainBanque">NC</label></h3>
                             <!--<h3>Etat de sa main <i class="fa fa-hand-paper-o fa-2x"></i> - Valeur : 10</h3>
                             <h3>Etat de sa main <i class="fa fa-thumbs-down fa-2x"></i> - Valeur : 22</h3>-->
                        </div>
@@ -72,11 +72,6 @@ Nam ac dapibus ex, a pretium sem. Cras lacinia, arcu laoreet vehicula laoreet, e
 Duis dignissim et erat ac rutrum. Sed id mollis nibh, convallis consequat leo. Maecenas dui felis, dictum faucibus erat ac, porta convallis libero. Donec tortor nisl, porta in ultricies eu, consequat non mauris. Donec aliquam erat eget leo vulputate scelerisque. Suspendisse tempor, erat vitae consectetur sodales, nunc tellus sollicitudin sapien, sit amet maximus ante lorem ut lacus. Proin aliquam, dolor in fringilla malesuada, mi erat congue massa, ut ornare ipsum ante ac ipsum. In vitae nibh vehicula, finibus urna vitae, gravida turpis. Phasellus vitae eleifend augue. Phasellus faucibus laoreet est id scelerisque. Praesent euismod eros enim, feugiat porttitor eros mollis at. In non justo et dolor varius pharetra eget id nulla. Nam convallis in ante a mattis. Integer interdum vulputate sem, a tempor augue vulputate ut. Duis eleifend, tortor at luctus posuere, tortor nisl finibus lectus, in ornare felis elit in justo. Donec hendrerit finibus felis, eget fringilla felis maximus vel.
                 </p>
             </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-10">
-            
         </div>
     </div>
       

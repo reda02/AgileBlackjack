@@ -12,13 +12,10 @@ var deck = new Array(260);
 var bankCard1=0;
 var totale=0 ;
 var totaleBanque=0;
-
 var deck = new Array(260);
 var bankCard1=0;
 
-// Une fonction qui à partir d'un tableau de cartes (La main du joueur), vous donne le résultat de l'addition
-// Params : Liste de cartes
-// Sortie : Résultat de la main
+
 function parseCard(__card ){
  
   var temp =__card.substring(__card.length-1,__card.length);
@@ -68,16 +65,16 @@ function rendererPlayerCards(){
  
 }
 
+// Calcul main du banquier
 function CalculeTotalCardBankcards(){
 	
 	totaleBanque=0;
-    var card11 = false;
+  var card11 = false;
 
  for(var z=0; z < cardBanque.length; z++)
  {
-  
   if(11 == parseCard(cardBanque[z]) && (11 == parseCard(cardBanque[z+1]))){
-   arreterleJeux(total);
+   arreterleJeux(total,"bank");
   }
  } 
   
@@ -100,77 +97,75 @@ function CalculeTotalCardBankcards(){
   
  }
      console.log("etat "+card11);
-     console.log("totaleBanque "+totaleBanque);
+     
 
     if( totaleBanque >= 21 ){
-		arreterJeux("tolat>21");
+		    arreterJeux("tolat>21", "bank");
      
     }
- 
+  // MAJ du résultat Main Joueur
+  $("#resultMainBanque").text(totale);
  
 }
-function arreterJeux(message){
-	
+function arreterJeux(message,who){
+	var person;
 	if( "tolat>21" == message ){
-		alert("la partie est superieur a 21")
+    if(who == "bank"){
+      person = "La Banque ";
+    }else{
+      person = "Votre jeu ";
+    }
+		showNotification(person +"est supérieur à 21, Perdu !","lose");
 	}
+  if( "tolat=21" == message ){
+    if(who == "bank"){
+      person = "La Banque ";
+    }else{
+      person = "Votre jeu ";
+    }
+    showNotification(person +"est un BlackJack ! GAGNE !","win");
+  }
 	
 }
-	
-
-
-
-
-
-
-
+// Calcul main d'un joueur
 function CalculeTotalCard(){
-totale=0;
+ totale=0;
 
  var card11 = false;
- 
-
-
  for(var z=0; z < cardsJoueur.length; z++)
  {
-  
-  if(11 == parseCard(cardsJoueur[z]) && (11 == parseCard(cardsJoueur[z+1]))){
-   arreterleJeux(total);
-  }
+     if(11 == parseCard(cardsJoueur[z]) && (11 == parseCard(cardsJoueur[z+1]))){
+        arreterleJeux(total,"player");
+      }
  } 
   
  for(var z=0; z < cardsJoueur.length; z++)
  {
-  if(11 == parseCard(cardsJoueur[z]) ){
-   card11 =true;
-  }  
+    if(11 == parseCard(cardsJoueur[z]) ){
+      card11 =true;
+    }  
  }
  for(var z=0; z < cardsJoueur.length; z++)
  {
- 
     totale= totale + parseCard(cardsJoueur[z]) ; 
-        
- 
  } 
  if(totale > 21 && card11 == true){
-  totale=totale - 10;
- // console.log("info "+"-10");
-  
+  totale=totale - 10;  
  }
-  //   console.log("etat "+card11);
-  //   console.log("totale "+totale);
-
-    if( totale >= 21 ){
-		arreterJeux("tolat>21");
-     
-    }
- 
+  if( totale > 21 ){
+    arreterJeux("tolat>21","player");
+  }
+  if(totale == 21){
+    arreterJeux("tolat=21","player");
+  }
+  // MAJ du résultat Main Joueur
+  $("#resultMainJoueur").text(totale);
  
 }
 function arreterJeux(message){
 	
 	if( "tolat>21" == message ){
-		alert("la partie est superieur a 21")
+		showNotification("Votre jeu est supérieur à 21, Vous avez perdu !","lose");
 	}
 
 }
@@ -191,8 +186,8 @@ function getCard( id ){
  }
  var player = document.getElementById(id);
  var iDiv = document.createElement('div');
-     console.log("player"+ player)
-   console.log("iDiv"+ iDiv)
+     //console.log("player"+ player)
+   //console.log("iDiv"+ iDiv)
  iDiv.className = 'card';
  var img = "assets/img/";
  img += bankCard1 + ".png";
@@ -247,7 +242,8 @@ function setBet(){
  $("#current-bet").text(bet.toString());
 }
 function addCard(){
-  console.log($('#btn-add-carte').hasClass("disabled"))
+  //console.log($('#btn-add-carte').hasClass("disabled"))
+  //console.log(CalculeTotalCard());
   if(($('#btn-add-carte').hasClass("disabled"))) return;
   else
    getCard("playerCards")
@@ -299,4 +295,55 @@ function constructParamsList(data)
    for (var d in data)
       ret.push(encodeURIComponent(d) + "=" + encodeURIComponent(data[d]));
    return ret.join("&");
+}
+
+
+// NON TERMINE !
+function resetGame(){
+  $("#playerCards .card").remove();
+  $("#current-bet").text("0");
+  $("#resultMainJoueur").text("0");
+  activateButtons("btn_mise");
+}
+
+
+// Fonction d'affichage notification
+function showNotification(_message, _type){
+  $.notify.addStyle('happyblue', {
+    html: "<div><span data-notify-text/></div>",
+    classes: {
+      base: {
+        "white-space": "nowrap",
+        "background-color": "lightblue",
+        "padding": "5px"
+      },
+      superblue: {
+        "color": "white",
+        "background-color": "blue"
+      }
+    }
+  });
+   $.notify.addStyle('LoseRed', {
+    html: "<div><span data-notify-text/></div>",
+    classes: {
+      base: {
+        "white-space": "nowrap",
+        "background-color": "#FA5858",
+        "padding": "5px"
+      },
+      superRed: {
+        "color": "white",
+        "background-color": "#FA5858"
+      }
+    }
+  });
+  if(_type == "lose"){
+    $.notify(_message, {
+      style: 'LoseRed'
+    });
+  }else{
+    $.notify(_message, {
+      style: 'happyblue'
+    });
+  }
 }

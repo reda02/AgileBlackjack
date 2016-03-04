@@ -17,7 +17,26 @@
         border: 1px dotted black;
     }
     /** MAIN CONTENT **/
-    
+    .notifyjs-happyblue-base {
+      white-space: nowrap;
+      background-color: #0080FF;
+      padding: 40px;
+      
+    }
+    .notifyjs-happyblue-base span{
+        font-size: 28px;
+        color: white;
+    }
+    .notifyjs-LoseRed-base {
+      white-space: nowrap;
+      background-color: #FA5858;
+      padding: 40px;
+      
+    }
+    .notifyjs-LoseRed-base span{
+        font-size: 28px;
+        color: white;
+    }
     .mainContent{
         background-color: green;
     }
