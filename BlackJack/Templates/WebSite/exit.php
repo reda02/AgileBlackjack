@@ -18,7 +18,7 @@
 					<div class="col-md-4"><strong>Vous avez quitter le jeu</strong> </div>
 					<div class="col-md-4"> </div>
 				  	<div class="col-md-4">
-						<input class="btn btn-info pull-right" type="submit" value="Retour" onclick="window.location.href='board.php';" />
+						<input class="btn btn-info pull-right" type="submit" value="Retour" onclick="window.location.href='index.php';" />
 					</div>
 
 				</div>
