@@ -29,7 +29,7 @@ function parseCard(__card ){
   }else if( ('Q'==temp )|| ('K'==temp) || ('J' ==temp) ){
   temp= 10;
   
- }else if(totale < 11 && ('A' == temp) ){
+ }else if('A' == temp ){
   
   temp= 11;
   
@@ -66,7 +66,6 @@ function rendererPlayerCards(){
 
 // Calcul main du banquier
 function CalculeTotalCardBankcards(){
-	
 	totaleBanque=0;
 	var card11 = false;
 	  
@@ -76,18 +75,26 @@ function CalculeTotalCardBankcards(){
    card11 =true;
   }  
  }
+ var trouve = false;
  for(var z=0; z < cardBanque.length; z++)
  {
  
-    totaleBanque= totaleBanque + parseCard(cardBanque[z]) ; 
-        
+  
+	 var result = parseCard(cardBanque[z])
+		 if(result == 11 && !trouve)
+			 trouve = true;
+		 else if( result == 11 && trouve)
+			 result =1;
+		 
+    totaleBanque= totaleBanque + result ;         
  
  } 
+ /*
  if(totaleBanque > 21 && card11 == true){
   totaleBanque=totaleBanque - 10;
   console.log("info "+"-10");  
  }
-     console.log("etat "+card11);
+     console.log("etat "+card11);*/
      
 
     /*if( totaleBanque > 21 ){
@@ -119,6 +126,7 @@ function arreterJeux(who){
       message+=" "+totale+" , et la banque est "+totaleBanque+" , WIN !! ";
       etat = 1;
     }    
+	else message += " terminé vous avez 21";
     break;
     case "player":
     if(totale > 21){
@@ -134,8 +142,10 @@ function arreterJeux(who){
       message+=" "+totale+" , et la banque est "+totaleBanque+" , WIN !! ";
       etat = 1;
     }
+	else message += " terminé vous avez 21";
       break;
     default:
+	
       break;
   }
   if(message.length < 20) console.log(totaleBanque + "  " + totale);
@@ -178,7 +188,6 @@ function arreterJeux(who){
 // Calcul main d'un joueur
 function CalculeTotalCard(){
  totale=0;
-
  var card11 = false;
 
  for(var z=0; z < cardsJoueur.length; z++)
@@ -187,13 +196,22 @@ function CalculeTotalCard(){
       card11 =true;
     }  
  }
+ var trouve = false;
  for(var z=0; z < cardsJoueur.length; z++)
  {
-    totale= totale + parseCard(cardsJoueur[z]) ; 
+	 
+	 var result = parseCard(cardsJoueur[z])
+		 if(result == 11 && !trouve)
+			 trouve = true;
+		 else if( result == 11 && trouve)
+			 result =1;
+		 
+    totale= totale + result ; 
  } 
+ /*
  if(totale > 21 && card11 == true){
   totale=totale - 10;  
- }
+ }*/
   if( totale > 21 ){
     //arreterJeux("tolat>21","player");
     arreterJeux("player");
@@ -468,7 +486,6 @@ function unsetScoreDiv(idParag,score){
   $('#'+idParag).text(score);
 }
 function hold(){
-	debugger;
   do{
     getCard("bankCards");
     //sleepFor(300);
