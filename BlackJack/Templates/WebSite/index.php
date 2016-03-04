@@ -42,6 +42,7 @@
                         <div class="col-md-6">
                            <?php include("mise.php"); ?>
                         </div>
+						<div class="col-md-3"><a class="btn btn-danger " onclick="jeux();">Tour suivant</a></div>
                         <div class="col-md-3"><a class="btn btn-danger " onclick="onGameFinished();">QUITTER LA TABLE</a></div>
                     </div>
                     <div class="row gameState">

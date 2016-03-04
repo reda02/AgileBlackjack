@@ -153,26 +153,27 @@ function arreterJeux(who){
 	}
       break;
     default:
-	
+		resetGame(1);
       break;
   }
   if(message.length < 20) console.log(totaleBanque + "  " + totale);
   switch (etat){
     case 0 :
     showNotification(message,"lose");
-	resetGame(0);
+	//resetGame(0);
     break;
     case 1 :
     showNotification(message,"win");
-	resetGame(1);
+	//resetGame(1);
     break;
     case 2 :
     showNotification(message,"dual");
-	resetGame(2);
+	//resetGame(2);
     break;
     default:
       break;
   }
+  
 
 /*
 	if( "tolat>21" == message ){
@@ -268,7 +269,6 @@ function getCard( id ){
  if( id == "playerCards" ){
   CalculeTotalCard() ;
   setScoreDiv("score-current-player",totale);
-
  }
   
 
@@ -318,12 +318,11 @@ function setBet(){
  $("#current-bet").text(bet.toString());
 }
 function addCard(){
-  //console.log($('#btn-add-carte').hasClass("disabled"))
-  //console.log(CalculeTotalCard());
+ 
   if(($('#btn-add-carte').hasClass("disabled"))) return;
   else
   {
-   getCard("playerCards");      
+   getCard("playerCards");     
 	
   }
 }
@@ -380,6 +379,7 @@ function constructParamsList(data)
 function resetGame(type){
 	 var result = 0 ;
 	// 0 : lose ; 1 : dual ; 2 : win ; 3 : abon
+	sleepFor(500);
 	switch (type){
 		case 0 :
 		result = 0;
@@ -495,16 +495,58 @@ function unsetScoreDiv(idParag,score){
   }
   $('#'+idParag).text(score);
 }
-function hold(){
-  do{
-    getCard("bankCards");
-    //sleepFor(300);
+function hold(){ 
+	drawBank();
+	window.setTimeout(arreterJeux("bank"),2000); 
+}
+function jeux()
+{
+	console.log( "cahlizefua");
+	
+	 var etat = 0; 
 
+
+    if(totaleBanque > 21){
+     
+      etat = 2;
+    }else if (totaleBanque == totale){
       
-  }while(totaleBanque<17)
-  desactivateButtons("btn_mise","btn-add-carte");
-  arreterJeux("bank");
-  
+      etat = 1;
+    }else if (totaleBanque > totale){
+      
+      etat = 0;
+    }else if (totaleBanque < totale){
+      
+      etat = 1;
+    }    
+	else 
+	{
+		
+		etat = 0;
+	}
+	
+	switch (etat){
+    case 0 :
+	resetGame(0);
+    break;
+    case 1 :
+	resetGame(1);
+    break;
+    case 2 :
+	resetGame(2);
+    break;
+    default:
+      break;
+  }
+}
+function drawBank()
+{
+	  desactivateButtons("btn_mise","btn-add-carte");
+   
+do{   getCard("bankCards");
+
+}while(totaleBanque<17)
+	
 }
 
 function sleepFor( duree ){
@@ -529,7 +571,7 @@ function sleepFor( duree ){
   }
 }*/
 
-var walletPlayer;
+var walletPlayer = 1000;
 var walletBank;
 var bet;
 
