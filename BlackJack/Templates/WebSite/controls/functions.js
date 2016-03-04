@@ -99,7 +99,7 @@ function CalculeTotalCardBankcards(){
      console.log("etat "+card11);
      
 
-    if( totaleBanque >= 21 ){
+    if( totaleBanque > 21 ){
 		    arreterJeux("tolat>21", "bank");
      
     }
@@ -356,5 +356,40 @@ function setScoreDiv(idParag,score){
       $('#'+idParag).removeClass("hidden-div");
   }
   $('#'+idParag).text(score);
+}
+function hold(){
+  do{
+    getCard("bankCards");
+    sleepFor(1000);
+    /*setTimeout(function(){
+      getCard("bankCards");
+    }, 1000);*/
 
+      
+  }while(totaleBanque<17)
+  alert('à changer')
+  //afficheResultat();
+  
+}
+
+function sleepFor( duree ){
+    var now = new Date().getTime();
+    while(new Date().getTime() < now + duree){ /* do nothing */ } 
+}
+function afficheResultat(){
+  if(totaleBanque > 21){
+      $('#result-bet').notify('player win !! ','success')
+  }else{
+    if(totale <= 21){
+      if(totaleBanque > totale)
+        $('#result-bet').notify('bank win !! ','error');
+      else if (totaleBanque < totale && totaleBanque.length>1)
+        $('#result-bet').notify('player win !! ','success');
+      else
+        $('#result-bet').notify('dual !! ','warn');
+    }else{
+      $('#result-bet').notify('bank win !! ','error');
+    }
+
+  }
 }

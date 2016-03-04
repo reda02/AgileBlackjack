@@ -16,7 +16,7 @@ function mise() {
 		walletPlayer = walletPlayer - bet;
 		$("#wallet").text(walletPlayer.toString());
 		distribuerCartes();
-		activateButtons("btn-abandon","btn-add-carte");
+		activateButtons("btn-abandon","btn-add-carte","btn-hold");
 		desactivateButtons("btn_mise");
 		$('#inputBeginMise').slider('disable');
 		setBet();
