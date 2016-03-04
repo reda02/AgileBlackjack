@@ -350,7 +350,7 @@ function showNotification(_message, _type){
       style: 'happyblue'
     });
   }
-
+}
 function setScoreDiv(idParag,score){
   if(($('#'+idParag).hasClass("hidden-div"))) {
       $('#'+idParag).removeClass("hidden-div");
