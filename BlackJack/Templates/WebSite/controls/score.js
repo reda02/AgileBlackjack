@@ -2,7 +2,7 @@
 
 function onGameFinished() {
 
-	var person = prompt("Please enter your name", "Eddy Malou");
+	var person = prompt("Please enter your name", "");
 	if(person !== null){
 		var data = {};
 		data["name"] = person;
